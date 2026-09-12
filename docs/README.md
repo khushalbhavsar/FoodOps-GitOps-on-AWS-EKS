@@ -1,6 +1,6 @@
 # Architecture & Documentation
 
-This directory contains architecture diagrams, screenshots, and supplementary documentation for the Swiggy GitOps project.
+This directory contains architecture diagrams, screenshots, and supplementary documentation for the FoodOps GitOps project.
 
 ## Contents
 

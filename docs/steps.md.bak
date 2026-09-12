@@ -1,5 +1,5 @@
 Step-by-Step Equilibrium Process
-For readers who want to replicate the project, here’s the equilibrium process I followed from code to a fully deployed Swiggy clone:
+For readers who want to replicate the project, here’s the equilibrium process I followed from code to a fully deployed FoodOps clone:
 
 Press enter or click to view image in full size
 
@@ -9,7 +9,7 @@ Step 1: Clone the GitHub Repository
 Open VS Code.
 Open the terminal in VS Code.
 Clone the project:
-git clone https://github.com/arumullayaswanth/Swiggy-GitOps-project.git
+git clone https://github.com/arumullayaswanth/FoodOps-GitOps-project.git
 Step 2: Configure AWS Keys
 Make sure you have your AWS credentials configured. Run:
 
@@ -22,7 +22,7 @@ Region (like us-east-1)
 Output format (leave it as json)
 Step 3: Navigate into the Project
 ls
-cd Swiggy-GitOps-project
+cd FoodOps-GitOps-project
 ls
 Step 4: Create S3 Buckets for Terraform State
 These buckets will store terraform.tfstate files.
@@ -295,7 +295,7 @@ Click OK
 Pipeline:
 Definition : Pipeline script from SCM
 SCM : Git
-Repositories : https://github.com/arumullayaswanth/Swiggy-GitOps-project.git
+Repositories : https://github.com/arumullayaswanth/FoodOps-GitOps-project.git
 Branches to build : */master
 Script Path : eks-terraform/eks-jenkinsfile
 Apply
@@ -318,7 +318,7 @@ Click OK
 Pipeline:
 Definition : Pipeline script from SCM
 SCM : Git
-Repositories : https://github.com/arumullayaswanth/Swiggy-GitOps-project.git
+Repositories : https://github.com/arumullayaswanth/FoodOps-GitOps-project.git
 Branches to build : */master
 Script Path : ecr-terraform/ecr-jenkinfine
 Apply
@@ -347,15 +347,15 @@ Description: git credentials
 
 Go to Jenkins Dashboard
 Click New Item
-Name it: swiggy
+Name it: foodops
 Select: Pipeline
 Click OK
 Pipeline:
 Definition : Pipeline script from SCM
 SCM : Git
-Repositories : https://github.com/arumullayaswanth/Swiggy-GitOps-project.git
+Repositories : https://github.com/arumullayaswanth/FoodOps-GitOps-project.git
 Branches to build : */master
-Script Path : jenkinsfiles/swiggy
+Script Path : jenkinsfiles/foodops
 Apply
 Save
 6. click Build
@@ -440,7 +440,7 @@ Fill in the following:
 Application Name: project
 Project Name: default
 Sync Policy: Automatic
-Repository URL: https://github.com/arumullayaswanth/Swiggy-GitOps-project.git
+Repository URL: https://github.com/arumullayaswanth/FoodOps-GitOps-project.git
 Revision: HEAD
 Path: kubernetes-files
 Cluster URL: https://kubernetes.default.svc
@@ -457,7 +457,7 @@ Go to the Services section in Kubernetes:
 kubectl get svc -n dev
 Locate the EXTERNAL-IP of the LoadBalancer service.
 Copy this IP/URL you’ll use it to configure Route 53 for DNS.
-Step 17: Configuring Route 53 DNS for Your Swiggy Clone
+Step 17: Configuring Route 53 DNS for Your FoodOps Clone
 Follow these steps to point a domain/subdomain to your Load Balancer in EKS.
 
 Step 13.1: Log in to AWS Route 53
@@ -477,17 +477,17 @@ Step 13.3: Verify DNS Resolution
 
 Wait a few minutes for DNS propagation.
 Test the DNS from your terminal or browser:
-nslookup swiggy.aluru.site
+nslookup foodops.aluru.site
 3. You should see your LoadBalancer’s IP or DNS returned.
 
-Step 13.4: Access Your Swiggy Clone
+Step 13.4: Access Your FoodOps Clone
 
 Open your browser and navigate to:
 
-http://Swiggy.aluru.site
+http://FoodOps.aluru.site
 Your Hotstar clone should load successfully, deployed via ArgoCD with full GitOps CI/CD automation.
 
-✅ Optional: Enable HTTPS for swiggy.aluru.site using AWS ACM and attach it to your LoadBalancer to serve secure traffic.
+✅ Optional: Enable HTTPS for foodops.aluru.site using AWS ACM and attach it to your LoadBalancer to serve secure traffic.
 
 Navigate in SonarQube UI to See Project Metrics
 ✅ 1. Login to SonarQube Go to:
@@ -500,9 +500,9 @@ Password: admin (change after first login)
 
 Click on the “Projects” tab in the top menu.
 You’ll see a list of analyzed projects.
-3. Select the Project “Swiggy”
+3. Select the Project “FoodOps”
 
-Find and click on the project named Swiggy.
+Find and click on the project named FoodOps.
 4. View Bugs & Vulnerabilities
 
 Navigate to the “Issues” tab.
@@ -617,8 +617,8 @@ Press enter or click to view image in full size
 
 In the text box under “Import via Grafana.com”, paste this number:
 
-Swiggy-GitOps-project/Grafana at master · arumullayaswanth/Swiggy-GitOps-project
-Contribute to arumullayaswanth/Swiggy-GitOps-project development by creating an account on GitHub.
+FoodOps-GitOps-project/Grafana at master · arumullayaswanth/FoodOps-GitOps-project
+Contribute to arumullayaswanth/FoodOps-GitOps-project development by creating an account on GitHub.
 github.com
 
 Otherwise you can use Json Files in this repository You can download Jason files and you can upload In the dashboard.

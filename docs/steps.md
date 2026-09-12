@@ -1,6 +1,6 @@
 # Step-by-Step Deployment Guide
 
-A complete walkthrough to replicate the Swiggy Clone GitOps project — from code to a fully deployed application on AWS EKS.
+A complete walkthrough to replicate the FoodOps Clone GitOps project — from code to a fully deployed application on AWS EKS.
 
 ---
 
@@ -21,7 +21,7 @@ A complete walkthrough to replicate the Swiggy Clone GitOps project — from cod
 - [Step 14: Create Jenkins Pipeline — Build & Push Docker Images](#step-14-create-a-jenkins-pipeline-job-for-build-and-push-docker-images-to-ecr)
 - [Step 15: Install ArgoCD in Jumphost EC2](#step-15-install-argocd-in-jumphost-ec2)
 - [Step 16: Deploy with ArgoCD & Configure Route 53](#step-16-deploying-with-argocd-and-configuring-route-53)
-- [Step 17: Configure Route 53 DNS](#step-17-configuring-route-53-dns-for-your-swiggy-clone)
+- [Step 17: Configure Route 53 DNS](#step-17-configuring-route-53-dns-for-your-foodops-clone)
 - [SonarQube Project Metrics](#navigate-in-sonarqube-ui-to-see-project-metrics)
 - [Prometheus & Grafana Monitoring](#monitoring-with-prometheus--grafana)
 - [Configure Alerts (Optional)](#optional-configure-alerts-email-notifications)
@@ -36,7 +36,7 @@ A complete walkthrough to replicate the Swiggy Clone GitOps project — from cod
 3. Clone the project:
 
 ```bash
-git clone https://github.com/arumullayaswanth/Swiggy-GitOps-project.git
+git clone https://github.com/arumullayaswanth/FoodOps-GitOps-project.git
 ```
 
 ---
@@ -62,7 +62,7 @@ Enter your:
 
 ```bash
 ls
-cd Swiggy-GitOps-project
+cd FoodOps-GitOps-project
 ls
 ```
 
@@ -420,7 +420,7 @@ Go to your Gmail inbox and confirm that a test email has arrived from Jenkins.
 5. **Pipeline configuration:**
    - **Definition:** `Pipeline script from SCM`
    - **SCM:** `Git`
-   - **Repository URL:** `https://github.com/khushalbhavsar/Swiggy-Gitops-EKS.git`
+   - **Repository URL:** `https://github.com/khushalbhavsar/FoodOps-Gitops-EKS.git`
    - **Branches to build:** `*/master`
    - **Script Path:** `eks-terraform/eks-jenkinsfile`
    - Click **Apply** → **Save**
@@ -446,7 +446,7 @@ Go to your Gmail inbox and confirm that a test email has arrived from Jenkins.
 5. **Pipeline configuration:**
    - **Definition:** `Pipeline script from SCM`
    - **SCM:** `Git`
-   - **Repository URL:** `https://github.com/arumullayaswanth/Swiggy-GitOps-project.git`
+   - **Repository URL:** `https://github.com/arumullayaswanth/FoodOps-GitOps-project.git`
    - **Branches to build:** `*/master`
    - **Script Path:** `ecr-terraform/ecr-jenkinfine`
    - Click **Apply** → **Save**
@@ -481,14 +481,14 @@ Go to your Gmail inbox and confirm that a test email has arrived from Jenkins.
 
 1. Go to **Jenkins Dashboard**.
 2. Click **New Item**.
-3. **Name it:** `swiggy`
+3. **Name it:** `foodops`
 4. Select: **Pipeline** → Click **OK**.
 5. **Pipeline configuration:**
    - **Definition:** `Pipeline script from SCM`
    - **SCM:** `Git`
-   - **Repository URL:** `https://github.com/arumullayaswanth/Swiggy-GitOps-project.git`
+   - **Repository URL:** `https://github.com/arumullayaswanth/FoodOps-GitOps-project.git`
    - **Branches to build:** `*/master`
-   - **Script Path:** `jenkinsfiles/swiggy`
+   - **Script Path:** `jenkinsfiles/foodops`
    - Click **Apply** → **Save**
 6. Click **Build**.
 
@@ -618,7 +618,7 @@ kubectl get namespaces
    - **Application Name:** `project`
    - **Project Name:** `default`
    - **Sync Policy:** `Automatic`
-   - **Repository URL:** `https://github.com/arumullayaswanth/Swiggy-GitOps-project.git`
+   - **Repository URL:** `https://github.com/arumullayaswanth/FoodOps-GitOps-project.git`
    - **Revision:** `HEAD`
    - **Path:** `kubernetes-files`
    - **Cluster URL:** `https://kubernetes.default.svc`
@@ -642,7 +642,7 @@ Once the application is deployed:
 
 ---
 
-## Step 17: Configuring Route 53 DNS for Your Swiggy Clone
+## Step 17: Configuring Route 53 DNS for Your FoodOps Clone
 
 Follow these steps to point a domain/subdomain to your Load Balancer in EKS.
 
@@ -664,22 +664,22 @@ Follow these steps to point a domain/subdomain to your Load Balancer in EKS.
 2. Test the DNS from your terminal or browser:
 
    ```bash
-   nslookup swiggy.aluru.site
+   nslookup foodops.aluru.site
    ```
 
 3. You should see your LoadBalancer's IP or DNS returned.
 
-### 17.4: Access Your Swiggy Clone
+### 17.4: Access Your FoodOps Clone
 
 Open your browser and navigate to:
 
 ```
-http://swiggy.aluru.site
+http://foodops.aluru.site
 ```
 
-Your Swiggy clone should load successfully, deployed via ArgoCD with full GitOps CI/CD automation.
+Your FoodOps clone should load successfully, deployed via ArgoCD with full GitOps CI/CD automation.
 
-> **Optional:** Enable HTTPS for `swiggy.aluru.site` using AWS ACM and attach it to your LoadBalancer to serve secure traffic.
+> **Optional:** Enable HTTPS for `foodops.aluru.site` using AWS ACM and attach it to your LoadBalancer to serve secure traffic.
 
 ---
 
@@ -696,7 +696,7 @@ Your Swiggy clone should load successfully, deployed via ArgoCD with full GitOps
 
 2. Go to **Projects** — click on the **Projects** tab in the top menu. You'll see a list of analyzed projects.
 
-3. **Select the Project "Swiggy"** — find and click on the project named **Swiggy**.
+3. **Select the Project "FoodOps"** — find and click on the project named **FoodOps**.
 
 4. **View Bugs & Vulnerabilities:**
    - Navigate to the **Issues** tab.

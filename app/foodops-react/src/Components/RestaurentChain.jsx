@@ -9,7 +9,7 @@ function RestaurentChain() {
                 <div style={{gap:"50px",overflowY:"scroll"}} className='d-flex  align-items-center'>
                     <div className='Hotel-card'>
                         <div style={{
-                            backgroundImage: `url(https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/k2why61tsxk9sh0sl68d)`
+                            backgroundImage: `url(https://media-assets.foodops.com/foodops/image/upload/fl_lossy,f_auto,q_auto,w_660/k2why61tsxk9sh0sl68d)`
                         }} className='Hotel-Card-img '>
                             <div className='Hotel-color'><h4 className='fw-bolder' >10% OFF UPTO ₹40</h4></div>
                         </div>
@@ -20,7 +20,7 @@ function RestaurentChain() {
 
                     <div className='Hotel-card'>
                         <div style={{
-                            backgroundImage: `url(https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/jys7zsopl1sjy2wwxadd)`
+                            backgroundImage: `url(https://media-assets.foodops.com/foodops/image/upload/fl_lossy,f_auto,q_auto,w_660/jys7zsopl1sjy2wwxadd)`
                         }} className='Hotel-Card-img '>
                             <div className='Hotel-color'><h4 className='fw-bolder' >FREE ITEM</h4></div>
                         </div>
@@ -31,7 +31,7 @@ function RestaurentChain() {
 
                     <div className='Hotel-card'>
                         <div style={{
-                            backgroundImage: `url(https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/xejp6fugbtzu08vpfqmu)`
+                            backgroundImage: `url(https://media-assets.foodops.com/foodops/image/upload/fl_lossy,f_auto,q_auto,w_660/xejp6fugbtzu08vpfqmu)`
                         }} className='Hotel-Card-img '>
                             <div className='Hotel-color'><h4 className='fw-bolder' ></h4></div>
                         </div>
@@ -42,7 +42,7 @@ function RestaurentChain() {
 
                     <div className='Hotel-card'>
                         <div style={{
-                            backgroundImage: `url(https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/56b7222d3239a954d09b42c05347debf)`
+                            backgroundImage: `url(https://media-assets.foodops.com/foodops/image/upload/fl_lossy,f_auto,q_auto,w_660/56b7222d3239a954d09b42c05347debf)`
                         }} className='Hotel-Card-img '>
                             <div className='Hotel-color'><h4 className='fw-bolder' >10% OFF UPTO ₹40</h4></div>
                         </div>
@@ -53,7 +53,7 @@ function RestaurentChain() {
 
                     <div className='Hotel-card'>
                         <div style={{
-                            backgroundImage: `url(https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/1ace5fa65eff3e1223feb696c956b38b)`
+                            backgroundImage: `url(https://media-assets.foodops.com/foodops/image/upload/fl_lossy,f_auto,q_auto,w_660/1ace5fa65eff3e1223feb696c956b38b)`
                         }} className='Hotel-Card-img '>
                             <div className='Hotel-color'><h4 className='fw-bolder' >50% OFF UPTO ₹100</h4></div>
                         </div>
@@ -64,7 +64,7 @@ function RestaurentChain() {
 
                     <div className='Hotel-card'>
                         <div style={{
-                            backgroundImage: `url(https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/hqskgt9wjjgqkj74coyw)`
+                            backgroundImage: `url(https://media-assets.foodops.com/foodops/image/upload/fl_lossy,f_auto,q_auto,w_660/hqskgt9wjjgqkj74coyw)`
                         }} className='Hotel-Card-img '>
                             <div className='Hotel-color'><h4 className='fw-bolder' ></h4></div>
                         </div>
@@ -75,7 +75,7 @@ function RestaurentChain() {
 
                     <div className='Hotel-card'>
                         <div style={{
-                            backgroundImage: `url(https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/56c9ab92bd79745fd152a30fa2525426)`
+                            backgroundImage: `url(https://media-assets.foodops.com/foodops/image/upload/fl_lossy,f_auto,q_auto,w_660/56c9ab92bd79745fd152a30fa2525426)`
                         }} className='Hotel-Card-img '>
                             <div className='Hotel-color'><h4 className='fw-bolder' ></h4></div>
                         </div>
@@ -86,7 +86,7 @@ function RestaurentChain() {
 
                     <div className='Hotel-card'>
                         <div style={{
-                            backgroundImage: `url(https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/ly5rzyg6tzwu4idmy4i1)`
+                            backgroundImage: `url(https://media-assets.foodops.com/foodops/image/upload/fl_lossy,f_auto,q_auto,w_660/ly5rzyg6tzwu4idmy4i1)`
                         }} className='Hotel-Card-img '>
                             <div className='Hotel-color'><h4 className='fw-bolder' ></h4>10% OFF UPTO ₹40</div>
                         </div>
@@ -97,7 +97,7 @@ function RestaurentChain() {
 
                     <div className='Hotel-card'>
                         <div style={{
-                            backgroundImage: `url(https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/xxi1rb25fxm3le88weuo)`
+                            backgroundImage: `url(https://media-assets.foodops.com/foodops/image/upload/fl_lossy,f_auto,q_auto,w_660/xxi1rb25fxm3le88weuo)`
                         }} className='Hotel-Card-img '>
                             <div className='Hotel-color'><h4 className='fw-bolder' >20% OFF UPTO ₹50</h4></div>
                         </div>
@@ -108,7 +108,7 @@ function RestaurentChain() {
 
                     <div className='Hotel-card'>
                         <div style={{
-                            backgroundImage: `url(https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/jbdpvb8bmzjirqmg44w3)`
+                            backgroundImage: `url(https://media-assets.foodops.com/foodops/image/upload/fl_lossy,f_auto,q_auto,w_660/jbdpvb8bmzjirqmg44w3)`
                         }} className='Hotel-Card-img '>
                             <div className='Hotel-color'><h4 className='fw-bolder' >30% OFF UPTO ₹75</h4></div>
                         </div>
@@ -119,7 +119,7 @@ function RestaurentChain() {
 
                     <div className='Hotel-card'>
                         <div style={{
-                            backgroundImage: `url(https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/ee5f8e06b300efc07c9fe3f4df40dfc4)`
+                            backgroundImage: `url(https://media-assets.foodops.com/foodops/image/upload/fl_lossy,f_auto,q_auto,w_660/ee5f8e06b300efc07c9fe3f4df40dfc4)`
                         }} className='Hotel-Card-img '>
                             <div className='Hotel-color'><h4 className='fw-bolder' ></h4></div>
                         </div>
@@ -130,7 +130,7 @@ function RestaurentChain() {
 
                     <div className='Hotel-card'>
                         <div style={{
-                            backgroundImage: `url(https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/zchpuqit7k4pdndgse4t)`
+                            backgroundImage: `url(https://media-assets.foodops.com/foodops/image/upload/fl_lossy,f_auto,q_auto,w_660/zchpuqit7k4pdndgse4t)`
                         }} className='Hotel-Card-img '>
                             <div className='Hotel-color'><h4 className='fw-bolder' >30% OFF UPTO ₹75</h4></div>
                         </div>
@@ -141,7 +141,7 @@ function RestaurentChain() {
 
                     <div className='Hotel-card'>
                         <div style={{
-                            backgroundImage: `url(https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/0b3356a88b6fc5966c452c4c9b1b5e4a)`
+                            backgroundImage: `url(https://media-assets.foodops.com/foodops/image/upload/fl_lossy,f_auto,q_auto,w_660/0b3356a88b6fc5966c452c4c9b1b5e4a)`
                         }} className='Hotel-Card-img '>
                             <div className='Hotel-color'><h4 className='fw-bolder' >40% OFF UPTO ₹80</h4></div>
                         </div>
@@ -152,7 +152,7 @@ function RestaurentChain() {
 
                     <div className='Hotel-card'>
                         <div style={{
-                            backgroundImage: `url(https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/4a3b48488e3aa9bda13efd8cfcd95284)`
+                            backgroundImage: `url(https://media-assets.foodops.com/foodops/image/upload/fl_lossy,f_auto,q_auto,w_660/4a3b48488e3aa9bda13efd8cfcd95284)`
                         }} className='Hotel-Card-img '>
                             <div className='Hotel-color'><h4 className='fw-bolder' >60% OFF UPTO ₹120</h4></div>
                         </div>
@@ -163,7 +163,7 @@ function RestaurentChain() {
 
                     <div className='Hotel-card'>
                         <div style={{
-                            backgroundImage: `url(https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/fx2mgrbp4ifryi76pgef)`
+                            backgroundImage: `url(https://media-assets.foodops.com/foodops/image/upload/fl_lossy,f_auto,q_auto,w_660/fx2mgrbp4ifryi76pgef)`
                         }} className='Hotel-Card-img '>
                             <div className='Hotel-color'><h4 className='fw-bolder' >25% OFF UPTO ₹125</h4></div>
                         </div>
@@ -174,7 +174,7 @@ function RestaurentChain() {
 
                     <div className='Hotel-card'>
                         <div style={{
-                            backgroundImage: `url(https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/af33b81798b11deba338e94b7585d348)`
+                            backgroundImage: `url(https://media-assets.foodops.com/foodops/image/upload/fl_lossy,f_auto,q_auto,w_660/af33b81798b11deba338e94b7585d348)`
                         }} className='Hotel-Card-img '>
                             <div className='Hotel-color'><h4 className='fw-bolder' >50% OFF UPTO ₹100</h4></div>
                         </div>

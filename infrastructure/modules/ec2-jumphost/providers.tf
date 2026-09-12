@@ -7,7 +7,7 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "swiggy-gitops-tfstate-843998948464"
+    bucket = "foodops-gitops-tfstate-843998948464"
     key    = "ec2/terraform.tfstate"
     region = "us-east-1"
   }

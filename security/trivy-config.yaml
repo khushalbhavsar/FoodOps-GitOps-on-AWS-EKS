@@ -1,4 +1,4 @@
-# Trivy Configuration for Swiggy GitOps Project
+# Trivy Configuration for FoodOps GitOps Project
 # https://aquasecurity.github.io/trivy/latest/docs/configuration/
 
 scan:

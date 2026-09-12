@@ -1,7 +1,7 @@
 // ============================================================================
 // APPLICATION CI/CD PIPELINE (Jenkinsfile.app)
 // ============================================================================
-// This pipeline automates the complete CI/CD workflow for the Swiggy React app:
+// This pipeline automates the complete CI/CD workflow for the FoodOps React app:
 // 1. Code checkout from GitHub
 // 2. Static code analysis with SonarQube
 // 3. Dependency installation and security scanning (OWASP, Trivy)
@@ -39,7 +39,7 @@ pipeline {
         // AWS Account ID - used to construct ECR repository URI
         AWS_ACCOUNT_ID = '843998948464'                  
         // ECR repository name where Docker images will be pushed
-        AWS_ECR_REPO_NAME = 'swiggy'                      
+        AWS_ECR_REPO_NAME = 'foodops'
         // Jenkins credentials ID for SonarQube authentication token
         SONAR_TOKEN_CRED  = 'sonarqube-token'            
         // AWS region where ECR repository is hosted
@@ -71,7 +71,7 @@ pipeline {
         // Uses the 'main' branch as the source
         stage('Checkout from Git') {
             steps {
-                git branch: 'main', url: 'https://github.com/khushalbhavsar/Swiggy-Gitops-EKS.git'
+                git branch: 'main', url: 'https://github.com/khushalbhavsar/FoodOps-Gitops-EKS.git'
             }
         }
 
@@ -97,13 +97,13 @@ pipeline {
         stage('Sonarqube Analysis') {
             steps {
                 // Navigate to the React application directory
-                dir('app/swiggy-react') {
+                dir('app/foodops-react') {
                     // withSonarQubeEnv sets up environment variables for SonarQube
                     withSonarQubeEnv(env.SONARQUBE_SERVER) {
                         sh ''' 
                         ${SCANNER_HOME}/bin/sonar-scanner \
-                        -Dsonar.projectName=swiggy \
-                        -Dsonar.projectKey=swiggy 
+                        -Dsonar.projectName=foodops \
+                        -Dsonar.projectKey=foodops
                         '''
                     }
                 }
@@ -133,7 +133,7 @@ pipeline {
         // Removes existing node_modules to ensure clean installation
         stage('Install Dependencies') {
             steps {
-                dir('app/swiggy-react') {
+                dir('app/foodops-react') {
                     sh '''
                     ls -la  # Verify package.json exists
                     if [ -f package.json ]; then
@@ -156,7 +156,7 @@ pipeline {
         // WARNING: First run downloads NVD data and may take 45+ minutes
         stage('OWASP FS Scan') {
             steps {
-                dir('app/swiggy-react') {
+                dir('app/foodops-react') {
                     // Run OWASP Dependency-Check with Node.js audit disabled (already covered)
                     dependencyCheck additionalArguments: '--scan . --disableYarnAudit --disableNodeAudit', odcInstallation: 'DP-check'
                     // Publish the XML report to Jenkins for visualization
@@ -174,7 +174,7 @@ pipeline {
         // - Secrets accidentally committed to code
         stage('Trivy File Scan') {
             steps {
-                dir('app/swiggy-react') {
+                dir('app/foodops-react') {
                     // 'trivy fs .' scans the current directory
                     // Output is saved to trivyfs.txt for email attachment
                     sh 'trivy fs . > trivyfs.txt'
@@ -190,13 +190,13 @@ pipeline {
         stage("Docker Image Build") {
             steps {
                 script {
-                    dir('app/swiggy-react') {
+                    dir('app/foodops-react') {
                         // Remove unused Docker data (networks, dangling images, etc.)
                         sh 'docker system prune -f'
                         // Remove all stopped containers
                         sh 'docker container prune -f'
                         // Build Docker image with the ECR repo name as tag
-                        // Uses Dockerfile in current directory (app/swiggy-react)
+                        // Uses Dockerfile in current directory (app/foodops-react)
                         sh 'docker build -t ${AWS_ECR_REPO_NAME} .'
                     }
                 }
@@ -216,7 +216,7 @@ pipeline {
                     sh 'aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username AWS --password-stdin ${REPOSITORY_URI}'
                     
                     // Step 2: Tag the local image with full ECR URI and build number
-                    // Example: 843998948464.dkr.ecr.us-east-1.amazonaws.com/swiggy:42
+                    // Example: 843998948464.dkr.ecr.us-east-1.amazonaws.com/foodops:42
                     sh 'docker tag ${AWS_ECR_REPO_NAME}:latest ${REPOSITORY_URI}/${AWS_ECR_REPO_NAME}:${BUILD_NUMBER}'
                     
                     // Step 3: Push the tagged image to ECR
@@ -245,7 +245,7 @@ pipeline {
         // This ensures we have a clean copy for the GitOps update
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/khushalbhavsar/Swiggy-Gitops-EKS.git'
+                git branch: 'main', url: 'https://github.com/khushalbhavsar/FoodOps-Gitops-EKS.git'
             }
         }
 
@@ -257,14 +257,14 @@ pipeline {
         // This completes the CI/CD loop: Code -> Image -> Update Manifest -> Deploy
         stage('Update Deployment file') {
             environment {
-                GIT_REPO_NAME = "Swiggy-Gitops-EKS"          // GitHub repository name
+                GIT_REPO_NAME = "FoodOps-Gitops-EKS"          // GitHub repository name
                 GIT_EMAIL = "khushalbhavsar41@gmail.com"     // Git commit author email
                 GIT_USER_NAME = "khushalbhavsar"             // Git commit author name
                 YAML_FILE = "deployment.yaml"                 // Kubernetes deployment manifest
             }
             steps {
                 // Navigate to the GitOps manifest directory
-                dir('gitops/apps/swiggy') {
+                dir('gitops/apps/foodops') {
                     // Use GitHub Personal Access Token for authentication
                     withCredentials([string(credentialsId: 'my-git-pattoken', variable: 'git_token')]) {
                         sh '''
@@ -276,7 +276,7 @@ pipeline {
 
                             # Use sed to replace the image line in deployment.yaml
                             # This updates the container image to the newly built version
-                            # Example: image: 843998948464.dkr.ecr.us-east-1.amazonaws.com/swiggy:42
+                            # Example: image: 843998948464.dkr.ecr.us-east-1.amazonaws.com/foodops:42
                             sed -i "s#image:.*#image: ${REPOSITORY_URI}/${AWS_ECR_REPO_NAME}:$BUILD_NUMBER#g" ${YAML_FILE}
                             
                             # Commit and push the changes to trigger ArgoCD sync
@@ -336,7 +336,6 @@ pipeline {
         }
     }
 }
-
 
 
 

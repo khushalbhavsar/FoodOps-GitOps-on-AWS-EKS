@@ -10,7 +10,7 @@ function RestaurentOnline() {
                     <button>filter<i class="fa-solid fa-gears"></i></button>
                     <button>Sort by<i class="fa-solid fa-angle-down"></i></button>
                     <button>Fast Delivery</button>
-                    <button>New On Swiggy</button>
+                    <button>New On FoodOps</button>
                     <button>Rate 4.0+</button>
                     <button>Pure Veg</button>
                     <button>Offers</button>
@@ -22,7 +22,7 @@ function RestaurentOnline() {
                     <div className='d-flex justify-content-between mt-4'>
                     <div className='Online-card'>
                         <div style={{
-                            backgroundImage: `url(https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/0b3356a88b6fc5966c452c4c9b1b5e4a)`
+                            backgroundImage: `url(https://media-assets.foodops.com/foodops/image/upload/fl_lossy,f_auto,q_auto,w_660/0b3356a88b6fc5966c452c4c9b1b5e4a)`
                         }} className='Online-Card-img '>
                             <div className='Online-color'><h4 className='fw-bolder' >40% OFF UPTO ₹80</h4></div>
                         </div>
@@ -33,7 +33,7 @@ function RestaurentOnline() {
 
                     <div className='Online-card'>
                         <div style={{
-                            backgroundImage: `url(https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/4a3b48488e3aa9bda13efd8cfcd95284)`
+                            backgroundImage: `url(https://media-assets.foodops.com/foodops/image/upload/fl_lossy,f_auto,q_auto,w_660/4a3b48488e3aa9bda13efd8cfcd95284)`
                         }} className='Online-Card-img '>
                             <div className='Online-color'><h4 className='fw-bolder' >60% OFF UPTO ₹120</h4></div>
                         </div>
@@ -44,7 +44,7 @@ function RestaurentOnline() {
 
                     <div className='Online-card'>
                         <div style={{
-                            backgroundImage: `url(https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/fx2mgrbp4ifryi76pgef)`
+                            backgroundImage: `url(https://media-assets.foodops.com/foodops/image/upload/fl_lossy,f_auto,q_auto,w_660/fx2mgrbp4ifryi76pgef)`
                         }} className='Online-Card-img '>
                             <div className='Online-color'><h4 className='fw-bolder' >25% OFF UPTO ₹125</h4></div>
                         </div>
@@ -55,7 +55,7 @@ function RestaurentOnline() {
 
                     <div className='Online-card'>
                         <div style={{
-                            backgroundImage: `url(https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/af33b81798b11deba338e94b7585d348)`
+                            backgroundImage: `url(https://media-assets.foodops.com/foodops/image/upload/fl_lossy,f_auto,q_auto,w_660/af33b81798b11deba338e94b7585d348)`
                         }} className='Online-Card-img '>
                             <div className='Online-color'><h4 className='fw-bolder' >50% OFF UPTO ₹100</h4></div>
                         </div>
@@ -68,7 +68,7 @@ function RestaurentOnline() {
                     <div className='d-flex justify-content-between'>
                     <div className='Online-card'>
                         <div style={{
-                            backgroundImage: `url(https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/1ace5fa65eff3e1223feb696c956b38b)`
+                            backgroundImage: `url(https://media-assets.foodops.com/foodops/image/upload/fl_lossy,f_auto,q_auto,w_660/1ace5fa65eff3e1223feb696c956b38b)`
                         }} className='Online-Card-img '>
                             <div className='Online-color'><h4 className='fw-bolder' >50% OFF UPTO ₹100</h4></div>
                         </div>
@@ -79,7 +79,7 @@ function RestaurentOnline() {
 
                     <div className='Online-card'>
                         <div style={{
-                            backgroundImage: `url(https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/hqskgt9wjjgqkj74coyw)`
+                            backgroundImage: `url(https://media-assets.foodops.com/foodops/image/upload/fl_lossy,f_auto,q_auto,w_660/hqskgt9wjjgqkj74coyw)`
                         }} className='Online-Card-img '>
                             <div className='Online-color'><h4 className='fw-bolder' ></h4></div>
                         </div>
@@ -90,7 +90,7 @@ function RestaurentOnline() {
 
                     <div className='Online-card'>
                         <div style={{
-                            backgroundImage: `url(https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/56c9ab92bd79745fd152a30fa2525426)`
+                            backgroundImage: `url(https://media-assets.foodops.com/foodops/image/upload/fl_lossy,f_auto,q_auto,w_660/56c9ab92bd79745fd152a30fa2525426)`
                         }} className='Online-Card-img '>
                             <div className='Online-color'><h4 className='fw-bolder' ></h4></div>
                         </div>
@@ -101,7 +101,7 @@ function RestaurentOnline() {
 
                     <div className='Online-card'>
                         <div style={{
-                            backgroundImage: `url(https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/ly5rzyg6tzwu4idmy4i1)`
+                            backgroundImage: `url(https://media-assets.foodops.com/foodops/image/upload/fl_lossy,f_auto,q_auto,w_660/ly5rzyg6tzwu4idmy4i1)`
                         }} className='Online-Card-img '>
                             <div className='Online-color'><h4 className='fw-bolder' ></h4>10% OFF UPTO ₹40</div>
                         </div>
@@ -114,7 +114,7 @@ function RestaurentOnline() {
                     <div className='d-flex justify-content-between'>
                     <div className='Online-card'>
                         <div style={{
-                            backgroundImage: `url(https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/xxi1rb25fxm3le88weuo)`
+                            backgroundImage: `url(https://media-assets.foodops.com/foodops/image/upload/fl_lossy,f_auto,q_auto,w_660/xxi1rb25fxm3le88weuo)`
                         }} className='Online-Card-img '>
                             <div className='Online-color'><h4 className='fw-bolder' >20% OFF UPTO ₹50</h4></div>
                         </div>
@@ -125,7 +125,7 @@ function RestaurentOnline() {
 
                     <div className='Online-card'>
                         <div style={{
-                            backgroundImage: `url(https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/jbdpvb8bmzjirqmg44w3)`
+                            backgroundImage: `url(https://media-assets.foodops.com/foodops/image/upload/fl_lossy,f_auto,q_auto,w_660/jbdpvb8bmzjirqmg44w3)`
                         }} className='Online-Card-img '>
                             <div className='Online-color'><h4 className='fw-bolder' >30% OFF UPTO ₹75</h4></div>
                         </div>
@@ -136,7 +136,7 @@ function RestaurentOnline() {
 
                     <div className='Online-card'>
                         <div style={{
-                            backgroundImage: `url(https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/ee5f8e06b300efc07c9fe3f4df40dfc4)`
+                            backgroundImage: `url(https://media-assets.foodops.com/foodops/image/upload/fl_lossy,f_auto,q_auto,w_660/ee5f8e06b300efc07c9fe3f4df40dfc4)`
                         }} className='Online-Card-img '>
                             <div className='Online-color'><h4 className='fw-bolder' ></h4></div>
                         </div>
@@ -147,7 +147,7 @@ function RestaurentOnline() {
 
                     <div className='Online-card'>
                         <div style={{
-                            backgroundImage: `url(https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/zchpuqit7k4pdndgse4t)`
+                            backgroundImage: `url(https://media-assets.foodops.com/foodops/image/upload/fl_lossy,f_auto,q_auto,w_660/zchpuqit7k4pdndgse4t)`
                         }} className='Online-Card-img '>
                             <div className='Online-color'><h4 className='fw-bolder' >30% OFF UPTO ₹75</h4></div>
                         </div>
@@ -160,7 +160,7 @@ function RestaurentOnline() {
                     <div className='d-flex justify-content-between'>
                         <div className='Online-card'>
                             <div style={{
-                                backgroundImage: `url(https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/k2why61tsxk9sh0sl68d)`
+                                backgroundImage: `url(https://media-assets.foodops.com/foodops/image/upload/fl_lossy,f_auto,q_auto,w_660/k2why61tsxk9sh0sl68d)`
                             }} className='Online-Card-img'>
                                 <div className='Online-color'><h4 className='fw-bolder' >10% OFF UPTO ₹40</h4></div>
                             </div>
@@ -171,7 +171,7 @@ function RestaurentOnline() {
 
                         <div className='Online-card'>
                             <div style={{
-                                backgroundImage: `url(https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/jys7zsopl1sjy2wwxadd)`
+                                backgroundImage: `url(https://media-assets.foodops.com/foodops/image/upload/fl_lossy,f_auto,q_auto,w_660/jys7zsopl1sjy2wwxadd)`
                             }} className='Online-Card-img '>
                                 <div className='Online-color'><h4 className='fw-bolder' >FREE ITEM</h4></div>
                             </div>
@@ -182,7 +182,7 @@ function RestaurentOnline() {
 
                         <div className='Online-card'>
                             <div style={{
-                                backgroundImage: `url(https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/xejp6fugbtzu08vpfqmu)`
+                                backgroundImage: `url(https://media-assets.foodops.com/foodops/image/upload/fl_lossy,f_auto,q_auto,w_660/xejp6fugbtzu08vpfqmu)`
                             }} className='Online-Card-img '>
                                 <div className='Online-color'><h4 className='fw-bolder' ></h4></div>
                             </div>
@@ -193,7 +193,7 @@ function RestaurentOnline() {
 
                         <div className='Online-card'>
                             <div style={{
-                                backgroundImage: `url(https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/56b7222d3239a954d09b42c05347debf)`
+                                backgroundImage: `url(https://media-assets.foodops.com/foodops/image/upload/fl_lossy,f_auto,q_auto,w_660/56b7222d3239a954d09b42c05347debf)`
                             }} className='Online-Card-img '>
                                 <div className='Online-color'><h4 className='fw-bolder' >10% OFF UPTO ₹40</h4></div>
                             </div>

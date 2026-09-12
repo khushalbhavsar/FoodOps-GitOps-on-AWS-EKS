@@ -27,7 +27,7 @@ spec:
                   name: mariadb-secret
                   key: root-password
             - name: MYSQL_DATABASE
-              value: swiggy
+              value: foodops
           volumeMounts:
             - name: mariadb-data
               mountPath: /var/lib/mysql

@@ -3,10 +3,10 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "bucket1" {
-  bucket = "swiggy-gitops-tfstate-843998948464"
+  bucket = "foodops-gitops-tfstate-843998948464"
 
   tags = {
-    Name        = "swiggy-gitops-tfstate-843998948464"
+    Name        = "foodops-gitops-tfstate-843998948464"
     Environment = "dev"
   }
 }
@@ -19,10 +19,10 @@ resource "aws_s3_bucket_versioning" "bucket1_versioning" {
 }
 
 resource "aws_s3_bucket" "bucket2" {
-  bucket = "swiggy-gitops-tfstate-843998948464-prod"
+  bucket = "foodops-gitops-tfstate-843998948464-prod"
 
   tags = {
-    Name        = "swiggy-gitops-tfstate-843998948464-prod"
+    Name        = "foodops-gitops-tfstate-843998948464-prod"
     Environment = "prod"
   }
 }

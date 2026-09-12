@@ -27,7 +27,7 @@ spec:
                   name: postgres-secret
                   key: password
             - name: POSTGRES_DB
-              value: swiggy
+              value: foodops
           volumeMounts:
             - name: postgres-data
               mountPath: /var/lib/postgresql/data

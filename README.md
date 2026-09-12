@@ -1,4 +1,4 @@
-# Swiggy Clone — GitOps CI/CD on AWS EKS
+# FoodOps– GitOps on AWS EKS
 
 [![Terraform](https://img.shields.io/badge/Terraform-%3E%3D1.6.3-623CE4?logo=terraform)](https://www.terraform.io/)
 [![Kubernetes](https://img.shields.io/badge/Kubernetes-EKS-326CE5?logo=kubernetes)](https://aws.amazon.com/eks/)
@@ -8,7 +8,7 @@
 [![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED?logo=docker)](https://www.docker.com/)
 [![AWS](https://img.shields.io/badge/AWS-Cloud-FF9900?logo=amazonwebservices)](https://aws.amazon.com/)
 
-A **production-grade DevOps project** deploying a Swiggy food delivery clone (React 18) to **AWS EKS** using **GitOps** with ArgoCD, **Jenkins CI/CD**, and **Terraform IaC** — featuring full monitoring, security scanning, and multi-environment support.
+A **production-grade DevOps project** deploying a FoodOps food delivery clone (React 18) to **AWS EKS** using **GitOps** with ArgoCD, **Jenkins CI/CD**, and **Terraform IaC** — featuring full monitoring, security scanning, and multi-environment support.
 
 ---
 
@@ -54,7 +54,7 @@ A **production-grade DevOps project** deploying a Swiggy food delivery clone (Re
 
 ## Overview
 
-This project demonstrates a **complete end-to-end DevOps pipeline** for deploying a Swiggy food delivery clone application. It covers:
+This project demonstrates a **complete end-to-end DevOps pipeline** for deploying a FoodOps food delivery clone application. It covers:
 
 - **Infrastructure provisioning** with Terraform (VPC, EKS, ECR, EC2, S3)
 - **Continuous Integration** with Jenkins (build, test, scan, push)
@@ -103,7 +103,7 @@ flowchart LR
 
     subgraph EKS["AWS EKS Cluster"]
         direction TB
-        F1[Swiggy App<br/>4 Replicas]
+        F1[FoodOps App<br/>4 Replicas]
         F2[MariaDB] 
         F3[PostgreSQL]
         F4[Prometheus]
@@ -135,7 +135,7 @@ Terraform-provisioned infrastructure in `us-east-1`:
 flowchart TB
     subgraph AWS["☁️ AWS Cloud — us-east-1"]
         subgraph S3["S3"]
-            S3A[("swiggy-gitops-tfstate<br/>Terraform State")]
+            S3A[("foodops-gitops-tfstate<br/>Terraform State")]
         end
 
         subgraph VPC["VPC · 10.0.0.0/16"]
@@ -161,7 +161,7 @@ flowchart TB
         end
 
         subgraph ECR2["ECR"]
-            REPO["swiggy repo<br/>Scan-on-Push · AES256"]
+            REPO["foodops repo<br/>Scan-on-Push · AES256"]
         end
     end
 
@@ -254,7 +254,7 @@ flowchart TB
         direction TB
         ROOT["gitops/argocd/<br/>root-app.yaml"]
         APPS["gitops/apps/"]
-        SW["swiggy/<br/>deployment.yaml<br/>service.yaml<br/>ingress.yaml"]
+        SW["foodops/<br/>deployment.yaml<br/>service.yaml<br/>ingress.yaml"]
         MON["monitoring/<br/>prometheus.yaml<br/>grafana.yaml"]
         DB["databases/<br/>mariadb.yaml<br/>postgres.yaml"]
         APPS --- SW
@@ -265,12 +265,12 @@ flowchart TB
     subgraph ARGOCD["ArgoCD Controller"]
         direction TB
         SYNC["Auto-Sync Engine<br/>━━━━━━━━━━━━━━━<br/>✓ Prune: true<br/>✓ Self-Heal: true"]
-        PROJ["Project:<br/>swiggy-gitops"]
+        PROJ["Project:<br/>foodops-gitops"]
     end
 
     subgraph EKS2["AWS EKS Cluster"]
         subgraph NS_DEFAULT["namespace: default"]
-            APP2["Swiggy App<br/>4 replicas · port 3000"]
+            APP2["FoodOps App<br/>4 replicas · port 3000"]
             MDB["MariaDB 10.11<br/>port 3306"]
             PG["PostgreSQL 15<br/>port 5432"]
         end
@@ -305,23 +305,23 @@ Workloads and networking inside the EKS cluster:
 
 ```mermaid
 flowchart TB
-    INET["🌐 Internet"] -->|"swiggy.example.com"| ING
+    INET["🌐 Internet"] -->|"foodops.example.com"| ING
 
     subgraph EKS3["AWS EKS Cluster"]
         ING["Nginx Ingress<br/>Controller"]
         
         subgraph SVC["Services"]
-            SVC_APP["swiggy-app<br/>LoadBalancer<br/>:80 → :3000"]
+            SVC_APP["foodops-app<br/>LoadBalancer<br/>:80 → :3000"]
             SVC_MDB["mariadb-svc<br/>ClusterIP<br/>:3306"]
             SVC_PG["postgres-svc<br/>ClusterIP<br/>:5432"]
         end
 
         subgraph PODS["Pods"]
             direction TB
-            P1["swiggy-app<br/>replica 1"]
-            P2["swiggy-app<br/>replica 2"]
-            P3["swiggy-app<br/>replica 3"]
-            P4["swiggy-app<br/>replica 4"]
+            P1["foodops-app<br/>replica 1"]
+            P2["foodops-app<br/>replica 2"]
+            P3["foodops-app<br/>replica 3"]
+            P4["foodops-app<br/>replica 4"]
             PM["mariadb<br/>pod"]
             PP["postgresql<br/>pod"]
         end
@@ -415,7 +415,7 @@ flowchart BT
     VPCM["vpc<br/>10.0.0.0/16<br/>2 Public + 2 Private Subnets<br/>IGW · Route Tables"]
     EC2M["ec2-jumphost<br/>Jenkins · SonarQube · Docker<br/>IAM Role + Instance Profile<br/>30 GB · 20+ Tools"]
     EKSM["eks<br/>EKS Control Plane<br/>Worker Node Group<br/>Autoscaler Policy"]
-    ECRM["ecr<br/>swiggy repo<br/>Scan-on-Push · AES256"]
+    ECRM["ecr<br/>foodops repo<br/>Scan-on-Push · AES256"]
 
     subgraph ENVS["Environments"]
         DEV2["dev/main.tf"]
@@ -465,7 +465,7 @@ flowchart BT
 ## Project Structure
 
 ```
-swiggy-gitops/
+foodops-gitops/
 │
 ├── README.md                              # This file
 ├── docs/                                  # Documentation & guides
@@ -474,7 +474,7 @@ swiggy-gitops/
 │   └── tools-verification.md              #   Tool installation checklist
 │
 ├── app/                                   # Application Source Code
-│   └── swiggy-react/
+│   └── foodops-react/
 │       ├── Dockerfile                     #   Docker build (node:16-slim)
 │       ├── package.json                   #   React 18 + Bootstrap 5
 │       ├── public/
@@ -511,7 +511,7 @@ swiggy-gitops/
 │
 ├── gitops/                                # ArgoCD watches THIS directory
 │   ├── apps/
-│   │   ├── swiggy/
+│   │   ├── foodops/
 │   │   │   ├── deployment.yaml            #     4-replica deployment
 │   │   │   ├── service.yaml               #     LoadBalancer service
 │   │   │   └── ingress.yaml               #     Nginx ingress rules
@@ -573,8 +573,8 @@ swiggy-gitops/
 ### 1. Create S3 Backends for Terraform State
 
 ```bash
-git clone https://github.com/khushalbhavsar/Swiggy-Gitops-EKS.git
-cd Swiggy-Gitops-EKS
+git clone https://github.com/khushalbhavsar/FoodOps-Gitops-EKS.git
+cd FoodOps-Gitops-EKS
 
 cd infrastructure/modules/s3-backend
 terraform init
@@ -617,7 +617,7 @@ This runs `terraform init → validate → plan → apply` against the EKS modul
 
 ### 4. Create ECR Repository
 
-The ECR module creates a repository named `swiggy` with:
+The ECR module creates a repository named `foodops` with:
 - **Scan-on-push** enabled for automatic vulnerability detection
 - **AES256 encryption**
 - **Force delete** enabled for clean teardown
@@ -669,13 +669,13 @@ The main CI pipeline runs **10 stages** end-to-end:
 | **Checkout from Git**     | Clones the `main` branch from GitHub                                 |
 | **SonarQube Analysis**    | Runs static code analysis via SonarQube scanner                      |
 | **Quality Gate**          | Waits for SonarQube quality gate result                              |
-| **Install Dependencies**  | Runs `npm install` in `app/swiggy-react/`                            |
+| **Install Dependencies**  | Runs `npm install` in `app/foodops-react/`                            |
 | **OWASP FS Scan**         | Runs OWASP Dependency-Check on the project filesystem                |
 | **Trivy File Scan**       | Scans the filesystem for vulnerabilities, misconfigs, and secrets    |
-| **Docker Image Build**    | Builds the Docker image from `app/swiggy-react/Dockerfile`          |
+| **Docker Image Build**    | Builds the Docker image from `app/foodops-react/Dockerfile`          |
 | **ECR Image Pushing**     | Tags and pushes the image to AWS ECR with build number tag           |
 | **Trivy Image Scan**      | Scans the pushed Docker image for vulnerabilities                    |
-| **Update Deployment File**| Updates `gitops/apps/swiggy/deployment.yaml` with the new image tag  |
+| **Update Deployment File**| Updates `gitops/apps/foodops/deployment.yaml` with the new image tag  |
 
 **Post-build:** Sends an email notification with Trivy and OWASP reports attached.
 
@@ -707,7 +707,7 @@ A parameterized pipeline for Terraform operations:
 |------------------|-------------------------------------------------------------------------------|
 | **vpc**          | VPC (`10.0.0.0/16`), 2 public + 2 private subnets, IGW, route tables, SGs   |
 | **eks**          | EKS cluster with master/worker IAM roles, node groups, autoscaler policy      |
-| **ecr**          | ECR repository (`swiggy`) with scan-on-push and AES256 encryption            |
+| **ecr**          | ECR repository (`foodops`) with scan-on-push and AES256 encryption            |
 | **ec2-jumphost** | EC2 instance with IAM profile, 30 GB volume, user-data installs 20+ tools    |
 | **s3-backend**   | S3 buckets for remote Terraform state storage                                |
 
@@ -726,7 +726,7 @@ State is stored remotely in S3:
 
 ```hcl
 backend "s3" {
-  bucket = "swiggy-gitops-tfstate-843998948464"
+  bucket = "foodops-gitops-tfstate-843998948464"
   key    = "dev/terraform.tfstate"
   region = "us-east-1"
 }
@@ -744,7 +744,7 @@ ArgoCD uses the **App-of-Apps** pattern with a single root application that recu
 # root-app.yaml
 spec:
   source:
-    repoURL: https://github.com/khushalbhavsar/Swiggy-Gitops-EKS.git
+    repoURL: https://github.com/khushalbhavsar/FoodOps-Gitops-EKS.git
     path: gitops/apps
     directory:
       recurse: true
@@ -758,30 +758,30 @@ spec:
 
 | Application    | Type             | Namespace    | Description                         |
 |----------------|------------------|--------------|-------------------------------------|
-| **swiggy-app** | K8s Deployment   | default      | React app (4 replicas, port 3000)   |
+| **foodops-app** | K8s Deployment   | default      | React app (4 replicas, port 3000)   |
 | **prometheus** | Helm Chart       | prometheus   | kube-prometheus-stack monitoring     |
 | **grafana**    | Helm Chart       | prometheus   | Grafana with Prometheus datasource   |
-| **mariadb**    | K8s Deployment   | default      | MariaDB 10.11 (database: swiggy)    |
-| **postgres**   | K8s Deployment   | default      | PostgreSQL 15 (database: swiggy)    |
+| **mariadb**    | K8s Deployment   | default      | MariaDB 10.11 (database: foodops)    |
+| **postgres**   | K8s Deployment   | default      | PostgreSQL 15 (database: foodops)    |
 
 ---
 
 ## Kubernetes Manifests
 
-### Swiggy App Deployment
+### FoodOps App Deployment
 
 - **Replicas:** 4
 - **Image:** Pulled from AWS ECR (updated automatically by Jenkins)
 - **Port:** 3000 (container) → 80 (service)
 - **Service Type:** LoadBalancer
-- **Ingress:** Nginx ingress controller at `swiggy.example.com`
+- **Ingress:** Nginx ingress controller at `foodops.example.com`
 - **Graceful Shutdown:** 300s termination grace period
 
 ### Service & Ingress
 
 ```yaml
 # Service: LoadBalancer exposing port 80 → container port 3000
-# Ingress: Nginx ingress at swiggy.example.com with rewrite-target
+# Ingress: Nginx ingress at foodops.example.com with rewrite-target
 ```
 
 ---
@@ -847,8 +847,8 @@ Two enforced policies in `security/policies/cluster-policies.yaml`:
 
 | Database        | Version | Port | Database Name | Storage               |
 |-----------------|---------|------|---------------|-----------------------|
-| **MariaDB**     | 10.11   | 3306 | swiggy        | PVC (mariadb-pvc)     |
-| **PostgreSQL**  | 15      | 5432 | swiggy        | PVC (postgres-pvc)    |
+| **MariaDB**     | 10.11   | 3306 | foodops        | PVC (mariadb-pvc)     |
+| **PostgreSQL**  | 15      | 5432 | foodops        | PVC (postgres-pvc)    |
 
 Both databases:
 - Use Kubernetes Secrets for credentials (`mariadb-secret`, `postgres-secret`)

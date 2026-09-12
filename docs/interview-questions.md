@@ -1,4 +1,4 @@
-# Swiggy GitOps EKS — Interview Questions, Answers & Project Walkthrough
+# FoodOps GitOps EKS — Interview Questions, Answers & Project Walkthrough
 
 Prepare for DevOps/Cloud interviews using this project as your reference.
 
@@ -25,7 +25,7 @@ Prepare for DevOps/Cloud interviews using this project as your reference.
 
 ### 30-Second Elevator Pitch
 
-> *"I built a production-grade end-to-end DevOps pipeline that deploys a Swiggy food delivery clone — a React 18 application — onto AWS EKS using the GitOps methodology. The entire infrastructure is provisioned with Terraform, CI is handled by Jenkins with integrated security scanning (SonarQube, Trivy, OWASP), Docker images are pushed to ECR, and ArgoCD continuously deploys to Kubernetes by watching the Git repository as the single source of truth. The project also includes Prometheus and Grafana for monitoring, and Kyverno for policy enforcement."*
+> *"I built a production-grade end-to-end DevOps pipeline that deploys a FoodOps food delivery clone — a React 18 application — onto AWS EKS using the GitOps methodology. The entire infrastructure is provisioned with Terraform, CI is handled by Jenkins with integrated security scanning (SonarQube, Trivy, OWASP), Docker images are pushed to ECR, and ArgoCD continuously deploys to Kubernetes by watching the Git repository as the single source of truth. The project also includes Prometheus and Grafana for monitoring, and Kyverno for policy enforcement."*
 
 ---
 
@@ -34,7 +34,7 @@ Prepare for DevOps/Cloud interviews using this project as your reference.
 Use this structure when the interviewer says **"Tell me about your project"**:
 
 **1. Start with the WHAT (10 sec):**
-> *"This is a complete DevOps project where I deploy a Swiggy food delivery clone app to AWS EKS using GitOps."*
+> *"This is a complete DevOps project where I deploy a FoodOps food delivery clone app to AWS EKS using GitOps."*
 
 **2. Explain the WHY (15 sec):**
 > *"I built it to demonstrate a real-world production pipeline — covering infrastructure automation, CI/CD, container orchestration, monitoring, and security — all the things a DevOps engineer handles day-to-day."*
@@ -190,7 +190,7 @@ This shows **self-awareness and growth mindset** — interviewers love this:
 
 ### 2. Explain the App-of-Apps pattern you implemented in ArgoCD.
 
-**Answer:** The App-of-Apps pattern uses a single root ArgoCD Application (`root-app.yaml`) that recursively watches the `gitops/apps/` directory. This root app automatically discovers and manages all child applications — swiggy deployment, Prometheus, Grafana, MariaDB, and PostgreSQL. Adding a new service is as simple as dropping a YAML file into the `gitops/apps/` directory; ArgoCD picks it up automatically. This eliminates the need to manually register each application in ArgoCD.
+**Answer:** The App-of-Apps pattern uses a single root ArgoCD Application (`root-app.yaml`) that recursively watches the `gitops/apps/` directory. This root app automatically discovers and manages all child applications — foodops deployment, Prometheus, Grafana, MariaDB, and PostgreSQL. Adding a new service is as simple as dropping a YAML file into the `gitops/apps/` directory; ArgoCD picks it up automatically. This eliminates the need to manually register each application in ArgoCD.
 
 ---
 
@@ -208,7 +208,7 @@ This shows **self-awareness and growth mindset** — interviewers love this:
 
 ### 5. How does the new Docker image tag reach ArgoCD after a Jenkins build?
 
-**Answer:** After Jenkins builds and pushes the Docker image to ECR, it runs a `sed` command to update the image tag in `gitops/apps/swiggy/deployment.yaml` and pushes that change back to GitHub. ArgoCD watches this repository and detects the manifest change, then automatically syncs the new deployment to EKS.
+**Answer:** After Jenkins builds and pushes the Docker image to ECR, it runs a `sed` command to update the image tag in `gitops/apps/foodops/deployment.yaml` and pushes that change back to GitHub. ArgoCD watches this repository and detects the manifest change, then automatically syncs the new deployment to EKS.
 
 ---
 
@@ -290,7 +290,7 @@ This shows **self-awareness and growth mindset** — interviewers love this:
 
 ## Kubernetes & EKS
 
-### 16. Describe the Kubernetes resources you deployed for the Swiggy application.
+### 16. Describe the Kubernetes resources you deployed for the FoodOps application.
 
 **Answer:** Three main resources:
 - **Deployment** — runs 4 replicas of the React app container (port 3000) from the ECR image, with `imagePullPolicy: Always` and a 300-second termination grace period
@@ -400,8 +400,8 @@ This layered approach catches issues at the code level, dependency level, and co
 
 **Answer:** Three steps:
 1. Authenticate with ECR: `aws ecr get-login-password | docker login --username AWS --password-stdin <ECR_URL>`
-2. Tag the image: `docker tag swiggy:latest <ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/swiggy:<BUILD_NUMBER>`
-3. Push: `docker push <ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/swiggy:<BUILD_NUMBER>`
+2. Tag the image: `docker tag foodops:latest <ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/foodops:<BUILD_NUMBER>`
+3. Push: `docker push <ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/foodops:<BUILD_NUMBER>`
 
 The ECR repository also has scan-on-push enabled for an additional layer of vulnerability scanning.
 

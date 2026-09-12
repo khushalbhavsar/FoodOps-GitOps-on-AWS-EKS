@@ -1,4 +1,4 @@
-# Security Policies for Swiggy GitOps Project
+# Security Policies for FoodOps GitOps Project
 #
 # This directory contains OPA/Rego or Kyverno policies for:
 # - Pod security standards enforcement

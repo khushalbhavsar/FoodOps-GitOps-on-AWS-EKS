@@ -46,7 +46,7 @@ pipeline {
         // Infrastructure code is located in: infrastructure/environments/
         stage('Checkout from Git') {
             steps {
-                git branch: 'main', url: 'https://github.com/khushalbhavsar/Swiggy-Gitops-EKS.git'
+                git branch: 'main', url: 'https://github.com/khushalbhavsar/FoodOps-Gitops-EKS.git'
             }
         }
 

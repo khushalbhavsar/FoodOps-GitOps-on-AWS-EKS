@@ -1,5 +1,5 @@
 resource "aws_ecr_repository" "hotstar" {
-  name = "swiggy"
+  name = "foodops"
 
   image_scanning_configuration {
     scan_on_push = true
@@ -14,6 +14,6 @@ resource "aws_ecr_repository" "hotstar" {
 
   tags = {
     Environment = "production"
-    Service     = "swiggy"
+    Service     = "foodops"
   }
 }
